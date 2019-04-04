@@ -74,3 +74,35 @@ grid-template-rows: 30px 12px;
 - 이 속성을 column으로 바꾸고 다시 `grid-auto-columns`를 주면 이번엔 작동한다.
 - 하지만 보통의 경우에는 `grid-auto-rows` 기본 속성만 사용할 것이다.
 - 웹에서 대부분 위에서 아래로 보여지기 때문이다.
+
+### #2.3 Grid Template Areas
+
+```css
+.container {
+  grid-template-areas:
+    "header header header"
+    "content content sidebar"
+    "content content sidebar"
+    "footer footer footer";
+}
+.first {
+  grid-area: header;
+  background-color: #f1c40f;
+}
+.second {
+  grid-area: sidebar;
+  background-color: #27ae60;
+}
+.third {
+  grid-area: footer;
+  background-color: #3498db;
+}
+.forth {
+  grid-area: content;
+  background-color: #d35400;
+}
+```
+
+- 위와 같이 정의를 하면 `grid-template-areas` 에서 선언한 위치에 각각의 `grid-area`가 배치된다.
+- 화면에 공간들을 그리고 안을 채우는 것과 같다.
+- element들의 사이즈를 주고 싶다면 `grid-auto-rows` 로 높이를 줄 수 있다.
